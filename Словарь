@@ -1,0 +1,27 @@
+#include <iostream>
+#include <map>
+#include <string>
+
+int main() {
+std::map<std::string, std::string> dictionary;
+
+    dictionary["apple"] = "яблоко";
+    dictionary["book"] = "книга";
+    dictionary["cat"] = "кошка";
+while (true) {
+std::string word;
+        std::cout << "Введите слово на английском языке (или 'выход' для завершения): ";
+        std::cin >> word;
+if (word == "выход") {
+            break;
+        }
+auto translation = dictionary.find(word);
+if (translation != dictionary.end()) {
+            std::cout << "Перевод: " << translation->second << std::endl;
+        } else {
+            std::cout << "Перевод не найден" << std::endl;
+        }
+    }
+
+    return 0;
+}
